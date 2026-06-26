@@ -1,0 +1,37 @@
+# --- Secrets: never commit ---
+.env
+.env.*
+*.key
+*.pem
+*.p12
+secrets.*
+**/credentials.json
+**/serviceAccount*.json
+
+# --- Asset-gen / API config (when the pipeline lands) ---
+.higgsfield*
+.elevenlabs*
+
+# --- Unity (for when a project lives here) ---
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]serSettings/
+[Mm]emoryCaptures/
+*.csproj
+*.sln
+*.unityproj
+*.booproj
+
+# --- Large/binary generated assets: review before committing ---
+# (uncomment paths as the asset pipeline produces them)
+# assets/generated/
+
+# --- OS / editor junk ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
