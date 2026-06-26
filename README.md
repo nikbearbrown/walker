@@ -20,6 +20,7 @@ core/     # engine-agnostic doctrine only (no .meta / AssetDatabase / MCP)
 assets/   # generative pipeline — Higgsfield, ElevenLabs, art, music; also powers video
 unity/    # Unity domain layer + tooling, built first; holds gate-pilot/
 unreal/   # stub: TODO, integration via MCP
+todo/     # the project's own to-do, one file per week (current: week-01.md)
 ```
 
 Each folder has a `README.md` saying what belongs in it.

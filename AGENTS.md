@@ -27,6 +27,7 @@ core/     # engine-agnostic doctrine only. If a file says .meta, AssetDatabase, 
 assets/   # generative pipeline (Higgsfield, ElevenLabs, art, music). Upstream of both engines; also powers video.
 unity/    # Unity domain layer + tooling, built first. Holds gate-pilot/.
 unreal/   # stub: TODO, integration via MCP. Nothing else yet.
+todo/     # the project's own to-do, one file per week (current: todo/week-01.md).
 ```
 
 Each folder has a `README.md` stating what belongs in it. The doctrine is not yet consolidated into `core/` — see `core/README.md`.
