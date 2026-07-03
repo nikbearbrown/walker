@@ -30,8 +30,11 @@ Each folder has a `README.md` saying what belongs in it.
 | Path | What |
 |---|---|
 | `walker-cli-critique.md` | Whole-project strategy — why Unity-first, why the membrane, what to build and what not to. |
+| `core/gates.md` | The gate doctrine — goal, three-step rolling horizons, step gates (solid/deferred/cut), fork gates (stay/fork/kill), every gate cleared by a named human. |
+| `unity/UNITY.md` | Environment pin + script conventions agents get as context — Unity 6 LTS, API renames, input policy, membrane rules. |
 | `unity/gate-pilot/gate-pilot-assignment-week1.md` | The week-1 to-do for two gamers building a tiny Unity game — one on Codex, one on Claude Code. |
 | `unity/gate-pilot/gate-pilot-week1.md` | The operating kit: shared harness, six identical prompts, definition-of-solid bars, attestation, P8 earn-silent trial. |
+| `unity/gate-pilot/gate-pilot-week2.md` | Week 2: the rolling-horizon trial — fork gates live, builder-written goals and prompts, fresh micro-game, excision test. |
 | `core/` · `assets/` · `unity/` · `unreal/` | The four zones, each with a README. Mostly stubs today — the repo is early. |
 | `AGENTS.md` / `CLAUDE.md` | How agents operate in this repo. |
 

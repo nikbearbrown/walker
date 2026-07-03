@@ -18,6 +18,10 @@ Engine-agnostic doctrine. The persona, the five supervisory capacities, the gate
 
 Core sits on top of `SNICKERDOODLE.md` (the Reallocation Engine constitution). Walker doctrine is the *supervisory methodology*; SNICKERDOODLE is the *human–AI contract* (P1–P8). They are different documents — don't restate the constitution here.
 
+## What's here
+
+- **`gates.md`** — the rolling-horizon gate doctrine: Gate 0 (formulation), three-step horizons with step gates, the fork gate (stay/fork/kill), fork-only-from-solid, coded-for-forkability, and P8 as gate-*cost*-never-gate-*count*. The gate-pilot is its frozen-fork special case.
+
 ## Status
 
-The doctrine is **not yet consolidated**. It currently lives scattered across `../walker-cli-critique.md` (strategy) and the original Walker system prompt. Writing the clean engine-agnostic doctrine doc — and splitting the Unity-specific pieces (the A–E phases, the seven Unity failure modes, the labor table) out into `unity/` — is this folder's next task.
+The rest of the doctrine is **not yet consolidated**. It currently lives scattered across `../walker-cli-critique.md` (strategy) and the original Walker system prompt. Writing the clean engine-agnostic doctrine doc — and splitting the Unity-specific pieces (the A–E phases, the seven Unity failure modes, the labor table) out into `unity/` — is this folder's next task.

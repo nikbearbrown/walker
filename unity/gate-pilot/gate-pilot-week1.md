@@ -32,7 +32,7 @@ A skill does not count because it ran once. It counts when it has an attestation
 1. **Identical prompts.** Both builders paste the *same* per-increment prompt block (below). Free-styled prompts measure prompting skill, not the agent. This is the whole ballgame.
 2. **Identical "definition of solid."** Each gate has a shared pass condition (below). Otherwise two humans judging "solid" differently becomes a hidden variable.
 3. **Matched-skill builders — both Unity-comfortable (confirmed).** Removes skill as a variable, so the comparison is genuinely Codex vs Claude. Note the consequence: with two experts you're testing whether the gates *keep good agents honest* (scope creep, membrane breaches, plausible-but-wrong feel waved through under speed) — not whether gates rescue a novice who can't tell solid from shaky. Don't let the debrief over-claim "gates help everyone" off a two-expert sample.
-4. **Same engine setup.** Same Unity version, same 2D template, same starting scene. Only the agent differs.
+4. **Same engine setup.** Pinned in **`unity/UNITY.md`**: Unity 6 LTS (6000.0.x), same 2D template, same starting scene, Active Input Handling = Both. Both builders hand their agent `UNITY.md` as context before Increment 1 — otherwise agent training priors (old `Rigidbody2D.velocity` API, input-system choice) become hidden variables logged as agent differences. Only the agent differs.
 
 ## The game (shared spec)
 
@@ -90,9 +90,9 @@ Same project. Write a single C# MonoBehaviour `ScoreManager.cs` that holds an in
 
 ## Starter project skeleton (shared harness — build once, clone to both)
 
-A reference *harness*, not a reference game. Identical Editor-side setup so the only variable is the agent's code. No imported assets — primitives only, so the asset-import membrane stays out of week 1 entirely.
+A reference *harness*, not a reference game. Identical Editor-side setup so the only variable is the agent's code. No imported *art* assets — primitives only, so the asset-import membrane stays out of week 1 entirely. Libraries are the one exception: the human pre-installs DOTween and Cinemachine per `unity/UNITY.md` (Editor-side, before cloning), so juice is one line away for both agents equally.
 
-Build one Unity project containing, and **nothing else**:
+Environment pinned by `unity/UNITY.md` (Unity 6 LTS 6000.0.x — record the exact patch here when built; Active Input Handling = Both). Build one Unity project containing, and **nothing else**:
 
 - A **Player** GameObject — a primitive square sprite, `Rigidbody2D` (gravity scale 0), tagged `Player`.
 - An **Enemy** prefab shell — a primitive circle sprite, `Rigidbody2D`, `Collider2D`, tagged `Enemy`. No scripts.
@@ -104,6 +104,8 @@ Build one Unity project containing, and **nothing else**:
 Clone it byte-for-byte to both builders. Whatever's in the harness, neither agent authored — so it can't be the thing that differs. (No download of a reference *game* — a playable/source reference would let the agents copy known code, collapse "solid" into "matches the reference," and kill the moments where the human catches plausible-but-wrong by playing.)
 
 ## The gate protocol (each builder, every increment)
+
+Walker's general gate doctrine is the rolling horizon in `core/gates.md` — plan three steps, step-gate each, fork-gate the horizon. **This pilot deliberately freezes the fork gates:** the six-increment path is fixed because the Codex-vs-Claude comparison requires identical paths. Only step gates run live here. That's an experimental control, not the doctrine.
 
 1. **Paste the prompt** — verbatim, into your agent (Codex or Claude Code).
 2. **Human plays** — run it in the Editor and play it. Non-delegable.
@@ -117,7 +119,8 @@ Clone it byte-for-byte to both builders. Whatever's in the harness, neither agen
 | Agent | Codex / Claude Code |
 | Increment | 1–6 |
 | Round-trips to solid | how many paste→play cycles |
-| First-try quality | did the first output run? compile? feel close? |
+| First-try quality | did the first output run? compile? feel close? old-API misses (see UNITY.md pins)? |
+| Input path chosen | which input system the agent reached for unprompted (legacy / new Input System) — finding, not bug. If it cost a round-trip, fall back to the default (legacy — see UNITY.md) and log both |
 | What only playing revealed | the PA moments — the agent emitted plausible code that was wrong when played |
 | Where the tooling couldn't keep up | anything done by hand because no tool did it |
 | Membrane pressure | did the agent try to author a prefab/scene, or push you to? |

@@ -17,6 +17,10 @@ All the real Unity tooling, plus the Unity-specific instantiation of the core do
 
 Also lands here as it's written: the A–E phase playbook and the seven Unity failure modes — the Unity instantiation of `core/` doctrine.
 
+## UNITY.md
+
+The environment pin + script conventions handed to agents as context: Unity 6 LTS, the API renames agents get wrong (`velocity` → `linearVelocity`), input-system policy, membrane rules for script authoring. Part of the pilot's identical-environment control.
+
 ## gate-pilot/
 
 The week-1 Codex-vs-Claude greenfield pilot — the first real Unity activity in the repo. Its **tooling-gap list** (everything builders had to do by hand) is the user-written roadmap that seeds the tooling above. Start there, not with the tooling.
