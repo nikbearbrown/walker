@@ -1,37 +1,56 @@
-# --- Secrets: never commit ---
+# Walker is the framework; games and recovered/reference projects have their own repos.
+/games/
+/examples/
+/projects/
+/godot-demo-projects/
+
+# Film production is not needed to use the framework.
+/youtube/
+*.[mM][pP]3
+*.[mM][pP]4
+
+# Local submission provenance; retain on disk with the recovered collections.
+/hushangqing_27407_31505521_The MIT License
+
+# Credentials and per-machine configuration (safe example files remain publishable).
 .env
 .env.*
-*.key
-*.pem
-*.p12
-secrets.*
-**/credentials.json
-**/serviceAccount*.json
+!.env.example
+!.env.*.example
+/credentials/
+/secrets/
+.claude/settings.local.json
 
-# --- Asset-gen / API config (when the pipeline lands) ---
-.higgsfield*
-.elevenlabs*
+# Installed dependencies and rebuildable caches.
+node_modules
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.godot/
+.mono/
 
-# --- Unity (for when a project lives here) ---
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
-[Ll]ogs/
-[Uu]serSettings/
-[Mm]emoryCaptures/
-*.csproj
-*.sln
-*.unityproj
-*.booproj
+# Local builds, captures, and application bundles.
+/build/
+/dist/
+/output/
+/exports/
+/captures/
+/screenshots/
+*.app/
+*.dmg
+*.zip
+*.tar.gz
 
-# --- Large/binary generated assets: review before committing ---
-# (uncomment paths as the asset pipeline produces them)
-# assets/generated/
-
-# --- OS / editor junk ---
+# Editor / OS state.
 .DS_Store
-Thumbs.db
-.vscode/
-.idea/
+._*
+*.swp
+*.swo
+
+# Keep framework sources: asset-gen/, docs/, engines/, prompts/, scripts/,
+# publish.sh, setup.md, agent instructions, README, and repository licensing.
+# Gitignore cannot filter by size: audit publishable files before each push.
